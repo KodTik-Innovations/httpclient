@@ -1,0 +1,34 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'    
+    id 'com.diffplug.spotless' version '7.0.3'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+spotless {
+    java {
+        target "**/*.java"		  
+        googleJavaFormat()
+    }
+}
+
+dependencies {    
+    implementation project(path: ':httpcore') 
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {        
+            groupId = 'org.kodtik.ide'
+            artifactId = 'httpclient'
+            version = '4.5.14'
+            from components.java             
+        }
+    }
+}
+
+
