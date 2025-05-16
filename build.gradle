@@ -16,9 +16,13 @@ spotless {
     }
 }
 
-dependencies {    
+dependencies {
+    implementation("commons-logging:commons-logging:1.2")
+    implementation("commons-codec:commons-codec:1.11")
+
     implementation project(path: ':httpcore') 
 }
+
 
 publishing {
     publications {

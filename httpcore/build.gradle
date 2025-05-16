@@ -16,6 +16,10 @@ spotless {
     }
 }
 
+dependencies {
+    implementation("commons-logging:commons-logging:1.2")
+}
+
 publishing {
     publications {
         maven(MavenPublication) {        
